@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'apps.compras',
     'apps.inventario',  
     'apps.ventas',
+    'corsheaders',
 
 ]
 
@@ -61,9 +62,16 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 
 ]
 
+
+#CORS_ALLOWED_ORIGINS = [
+#    'https://tudominio.com',
+#]
+# O para permitir todos los orígenes (menos seguro)
+CORS_ALLOW_ALL_ORIGINS = True
 
 
 ROOT_URLCONF = 'apipos.urls'
